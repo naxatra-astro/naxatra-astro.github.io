@@ -60,6 +60,10 @@ a {
   gap: 1.5rem;
 }
 
+.nav-links.active {
+  display: flex;
+}
+
 .nav-links a {
   font-weight: 500;
   transition: color var(--transition-speed);
