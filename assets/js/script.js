@@ -1,5 +1,5 @@
-// Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Navigation Toggle
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
 
@@ -30,12 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       const filter = btn.getAttribute('data-filter');
-
       galleryItems.forEach(item => {
-        const tag = item.getAttribute('data-tag');
-        if (filter === 'all' || tag === filter) {
+        if (filter === 'all' || item.classList.contains(filter)) {
           item.style.display = 'block';
         } else {
           item.style.display = 'none';
