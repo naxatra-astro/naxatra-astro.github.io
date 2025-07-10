@@ -30,11 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
+      const filter = btn.getAttribute('data-filter').toLowerCase().trim();
+
       galleryItems.forEach(item => {
         const tag = item.getAttribute('data-tag')?.toLowerCase().trim();
-        if (filter === 'all' || item.classList.contains(filter)) {
-          item.style.display = 'block';
+        if (filter === 'all' || tag === filter) {
+          item.style.removeProperty('display');
         } else {
           item.style.display = 'none';
         }
