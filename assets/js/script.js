@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
       const filter = btn.getAttribute('data-filter');
       galleryItems.forEach(item => {
+        const tag = item.getAttribute('data-tag')?.toLowerCase().trim();
         if (filter === 'all' || item.classList.contains(filter)) {
           item.style.display = 'block';
         } else {
