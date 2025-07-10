@@ -250,7 +250,7 @@ section {
 
 .gallery-grid {
   column-count: 3;
-  column-gap: 2.5rem;
+  column-gap: 1rem;
 }
 
 @media (max-width: 900px) {
