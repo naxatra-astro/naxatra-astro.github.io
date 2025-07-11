@@ -1,0 +1,29 @@
+name: 🚀 Deploy Naxatra Website to Hostinger
+
+on:
+  push:
+    branches:
+      - main  # or change this if you're using a different branch
+
+jobs:
+  ftp-deploy:
+    name: 📤 Upload to Hostinger via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📂 Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 📤 Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.github*
+            README.md
+            **/*Zone.Identifier*
+          delete: false
