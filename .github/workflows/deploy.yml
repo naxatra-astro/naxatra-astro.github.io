@@ -26,4 +26,3 @@ jobs:
             **/.github*
             README.md
             **/*Zone.Identifier*
-          delete: false
