@@ -3,7 +3,7 @@ name: 🚀 Deploy Naxatra Website to Hostinger
 on:
   push:
     branches:
-      - main  # or change this if you're using a different branch
+      - main 
 
 jobs:
   ftp-deploy:
